@@ -29,10 +29,11 @@ A biblioteca abre documentos HTML completos, imprimíveis pelo navegador. Para P
 - `src/lib/materials.ts`: materiais personalizados e impressão.
 - `src/components/club-app.tsx`: telas, onboarding e jogo.
 - `src/components/asset.tsx`: objetos ilustrados originais.
+- `src/lib/avatars.ts` e `src/components/profile-avatar.tsx`: catálogo dos dez personagens, migração dos avatares anteriores e retratos reutilizáveis.
 - `src/app/globals.css`: tokens visuais, responsividade e redução de movimento.
 - `tests/`: validações da progressão e persistência.
 
-O progresso é independente por aventureiro ou combinação de equipe e usa `localStorage` (`clube-da-missao:v1`). Não é sincronizado entre aparelhos e pode ser apagado pela limpeza do navegador. Uma nova equipe inicia do zero; voltar à mesma equipe recupera a expedição. O diário e o certificado são compartilhados pelos participantes da equipe ativa. Perfis podem ser editados pelo responsável. Não há rankings entre crianças.
+O progresso é independente por aventureiro ou combinação de equipe e usa `localStorage` (`clube-da-missao:v1`). Não é sincronizado entre aparelhos e pode ser apagado pela limpeza do navegador. Uma nova equipe inicia do zero; voltar à mesma equipe recupera a expedição. O diário e o certificado são compartilhados pelos participantes da equipe ativa. Perfis podem ter o nome e o avatar editados pelo responsável. Há dez retratos ilustrados de personagens, gerados individualmente e otimizados para a interface. A exclusão de perfis tem confirmação, pode ser desfeita antes de salvar e remove somente as expedições que incluíam o perfil excluído. Excluir todos os perfis retorna à entrada do Clube. Os avatares da primeira versão são migrados automaticamente, mantendo nomes e progresso. Não há rankings entre crianças.
 
 O mapa é narrativo; os esconderijos físicos são os do guia. Aventuras futuras aparecem como **Em breve**. Nenhuma funcionalidade de compra ou desbloqueio pago foi simulada.
 

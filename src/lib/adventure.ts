@@ -1,7 +1,7 @@
+import { migrateAvatar, type AvatarId } from './avatars';
 export const ASSETS = { logo: '/assets/clube-da-missao.webp', title: '/assets/missao-secreta.webp', world: '/assets/mundo-da-missao.webp', objects: '/assets/objetos-aventura.webp', paper: '/assets/mapas-e-cartas.webp' };
-export const AVATARS = ['Bússola', 'Lanterna', 'Guardião', 'Estrela', 'Tesouro', 'Mapa'] as const;
-export type Avatar = typeof AVATARS[number];
-export type Profile = { id: string; name: string; avatar: Avatar };
+export type AssetName = 'Bússola' | 'Lanterna' | 'Guardião' | 'Estrela' | 'Tesouro' | 'Mapa';
+export type Profile = { id: string; name: string; avatar: AvatarId };
 export type Run = { participants: string[]; step: number; prepared: boolean; checklist: boolean[]; hints: number[]; completedAt?: string; startedAt: string };
 export type ClubState = { version: 1; profiles: Profile[]; active: string; runs: Record<string, Run> };
 export const EMPTY: ClubState = { version: 1, profiles: [], active: '', runs: {} };
@@ -24,16 +24,21 @@ export function advance(run: Run, step: number, token: string, answer: string): 
  return next.step === STEPS.length ? { ...next, completedAt: new Date().toISOString() } : next;
 }
 export const BADGES = [
- { name: 'Primeiro Explorador', text: 'Receba sua primeira carta.', avatar: 'Bússola' as Avatar, at: 1 },
- { name: 'Olhos de Águia', text: 'Descubra os símbolos da floresta.', avatar: 'Estrela' as Avatar, at: 2 },
- { name: 'Explorador Corajoso', text: 'Encontre sua direção.', avatar: 'Lanterna' as Avatar, at: 3 },
- { name: 'Mestre das Pistas', text: 'Decifre a mensagem secreta.', avatar: 'Mapa' as Avatar, at: 5 },
- { name: 'Guardião do Tesouro', text: 'Conclua O Tesouro Perdido.', avatar: 'Guardião' as Avatar, at: 6 },
+ { name: 'Primeiro Explorador', text: 'Receba sua primeira carta.', avatar: 'Bússola' as AssetName, at: 1 },
+ { name: 'Olhos de Águia', text: 'Descubra os símbolos da floresta.', avatar: 'Estrela' as AssetName, at: 2 },
+ { name: 'Explorador Corajoso', text: 'Encontre sua direção.', avatar: 'Lanterna' as AssetName, at: 3 },
+ { name: 'Mestre das Pistas', text: 'Decifre a mensagem secreta.', avatar: 'Mapa' as AssetName, at: 5 },
+ { name: 'Guardião do Tesouro', text: 'Conclua O Tesouro Perdido.', avatar: 'Guardião' as AssetName, at: 6 },
 ];
+export function saveProfiles(state: ClubState, profiles: Profile[]): ClubState {
+ const ids = new Set(profiles.map(profile => profile.id));
+ const runs = Object.fromEntries(Object.entries(state.runs).filter(([, run]) => run.participants.every(id => ids.has(id))));
+ return { ...state, profiles, runs, active: runs[state.active] ? state.active : '' };
+}
 export function parseState(raw: string | null): ClubState {
- try { const s = JSON.parse(raw || 'null'); if (!s || s.version !== 1 || !Array.isArray(s.profiles) || s.profiles.length > 3 || !s.profiles.every((p: Profile) => typeof p.id === 'string' && typeof p.name === 'string' && p.name.trim().length > 0 && p.name.length <= 24 && AVATARS.includes(p.avatar)) || !s.runs || typeof s.runs !== 'object' || Array.isArray(s.runs)) return EMPTY;
+ try { const s = JSON.parse(raw || 'null'); if (!s || s.version !== 1 || !Array.isArray(s.profiles) || s.profiles.length > 3 || !s.profiles.every((p: Profile) => p && typeof p.id === 'string' && typeof p.name === 'string' && p.name.trim().length > 0 && p.name.length <= 24 && migrateAvatar(p.avatar)) || new Set(s.profiles.map((p: Profile)=>p.id)).size !== s.profiles.length || !s.runs || typeof s.runs !== 'object' || Array.isArray(s.runs)) return EMPTY;
  const runs: Record<string, Run> = {};
  for (const [key, r] of Object.entries(s.runs) as [string, Run][]) if (r && Array.isArray(r.participants) && r.participants.length > 0 && r.participants.every(id => s.profiles.some((p: Profile) => p.id === id)) && Number.isInteger(r.step) && r.step >= 0 && r.step <= 6 && typeof r.prepared === 'boolean' && Array.isArray(r.checklist) && r.checklist.length === 4 && r.checklist.every(v=>typeof v === 'boolean') && Array.isArray(r.hints) && r.hints.every(v=>Number.isInteger(v) && v>=0 && v<6) && typeof r.startedAt === 'string' && (r.completedAt === undefined || (typeof r.completedAt === 'string' && !Number.isNaN(Date.parse(r.completedAt)))) && key === runKey(r.participants)) runs[key] = r;
- return { version: 1, profiles: s.profiles, runs, active: typeof s.active === 'string' && runs[s.active] ? s.active : '' };
+ return { version: 1, profiles: s.profiles.map((p: Profile)=>({...p,avatar:migrateAvatar(p.avatar)!})), runs, active: typeof s.active === 'string' && runs[s.active] ? s.active : '' };
  } catch { return EMPTY; }
 }
