@@ -35,3 +35,7 @@ A biblioteca abre documentos HTML completos, imprimíveis pelo navegador. Para P
 O progresso é independente por aventureiro ou combinação de equipe e usa `localStorage` (`clube-da-missao:v1`). Não é sincronizado entre aparelhos e pode ser apagado pela limpeza do navegador. Uma nova equipe inicia do zero; voltar à mesma equipe recupera a expedição. O diário e o certificado são compartilhados pelos participantes da equipe ativa. Perfis podem ser editados pelo responsável. Não há rankings entre crianças.
 
 O mapa é narrativo; os esconderijos físicos são os do guia. Aventuras futuras aparecem como **Em breve**. Nenhuma funcionalidade de compra ou desbloqueio pago foi simulada.
+
+## Prévia
+
+![Interface do Clube da Missão](docs/clube-da-missao-preview.jpg)
