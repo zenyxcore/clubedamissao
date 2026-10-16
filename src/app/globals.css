@@ -114,3 +114,35 @@
 /* Six destinations: the included mission always remains on the atlas. */
 .season-catalog{grid-template-columns:repeat(3,1fr)}
 @media(max-width:760px){.season-catalog{grid-template-columns:repeat(2,1fr)}.season-catalog>button:last-child{grid-column:auto}.season-pin{width:90px}.season-pin img{height:78px}.season-pin span{font-size:10px;padding:4px 5px}}
+
+/* Direct PDF actions and mobile navigation. */
+.mobile-bottom-nav{display:none}
+.print-file{padding:18px;background:#f8efd9;color:#113d35;border:1px solid #bc9450;border-radius:12px;min-width:0}
+.print-file-info{display:flex;gap:12px;align-items:flex-start}.print-file-info>svg{flex-shrink:0;margin-top:2px}.print-file-info span{min-width:0}
+.print-file-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.print-files .print-file-actions a{padding:10px 12px;min-height:44px;gap:8px;font-size:12px;font-weight:700;border:1px solid #bc9450;border-radius:8px;background:#fff8e9;justify-content:center}
+.print-files .print-file-actions a:last-child{background:#123d35;color:#fff6df;border-color:#123d35}
+@media(max-width:760px){
+ html{scroll-padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+ .app{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+ .header{height:72px}.header-inner{width:calc(100% - 32px)}.header .brand img{width:62px;height:62px}
+ .header .nav,.header .mobile-menu{display:none}
+ .header-actions{gap:8px}.profile-pill{max-width:180px;min-height:44px;font-size:11px}
+ .mobile-bottom-nav{position:fixed;z-index:45;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));background:#08252bf5;border-top:1px solid #c5a25b66;box-shadow:0 -8px 30px #0004;backdrop-filter:blur(18px)}
+ .mobile-bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0;min-height:56px;padding:3px 0;border:0;border-radius:12px;background:none;color:#b9cdc5;font:inherit;font-size:10px;font-weight:600;line-height:1.3;cursor:pointer;-webkit-tap-highlight-color:transparent}
+ .mobile-bottom-nav button>span:first-child{display:flex;align-items:center;justify-content:center;width:42px;height:29px;border-radius:10px}
+ .mobile-bottom-nav button.active{color:#ffd372}.mobile-bottom-nav button.active>span:first-child{background:#ffd3721c}
+ .mobile-bottom-nav button:focus-visible{outline:2px solid #ffd372;outline-offset:-2px}
+ .hero{min-height:0}.hero-image{height:68%;object-position:65% 38%}
+ .hero-content{padding-top:clamp(190px,29svh,255px);padding-bottom:78px}
+ .hero h1{font-size:clamp(36px,10vw,46px);line-height:1.08;margin-top:15px}
+ .hero-description{font-size:14px;line-height:1.7}.hero-buttons{margin-top:20px;gap:14px}
+ .hero-buttons .btn{width:100%;min-height:52px;justify-content:center;font-size:13px}
+ .hero-buttons .text-link{min-height:44px;font-size:13px}.hero-meta{font-size:10px;line-height:1.6}
+ .hero-coordinate{top:23px}.hero-bottom{min-height:42px}
+ .print-files{grid-template-columns:minmax(0,1fr)}.print-file-actions a{flex:1}
+ .page-head h1{font-size:clamp(30px,8.5vw,37px)}
+ .material-actions>.icon-btn{min-width:44px;min-height:44px}
+ .print-pack .footnote{font-size:11px;line-height:1.7}
+}
+@media print{.mobile-bottom-nav{display:none!important}.app{padding-bottom:0}}
