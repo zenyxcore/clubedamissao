@@ -48,3 +48,17 @@ A preparação e a biblioteca oferecem PDFs A4 finais em `public/materiais`: sei
 Para regenerar os PDFs: `python scripts/build-materials.py` (ReportLab e pypdf instalados; dependências npm instaladas). O script importa STEPS diretamente do jogo; não duplique os desafios em outro arquivo. A carta-convite original fica em `public/materiais/carta-convite.jpg`.
 
 O aplicativo ainda usa persistência local e não possui autenticação ou liberação de acesso vinculada à compra. Os PDFs publicados são acessíveis por URL; não representam controle de acesso ao order bump.
+
+## Temporada de cinco aventuras
+
+O mapa inclui cinco logos e cenários. As histórias e as 30 etapas ficam em `src/server/season-content.json`, servidas por `/api/temporada/missoes/[id]` apenas após validação de compra no servidor. O progresso é local e separado por missão e IDs da equipe. Os materiais são abertos em HTML imprimível (guia + seis cartões; certificado ao concluir), com opção de salvar PDF pelo navegador.
+
+### Configuração comercial necessária
+
+Na Vercel, configure `CAKTO_CLIENT_ID`, `CAKTO_CLIENT_SECRET` (chave com read + orders), `CAKTO_SEASON_PRODUCT_ID` (UUID do produto adicional) e `SEASON_SESSION_SECRET` (aleatório, mínimo 32 caracteres). Nunca envie segredos ao cliente nem os publique no GitHub. Credenciais não foram provisionadas nesta alteração. Sem elas, a ativação falha fechada e nenhuma missão extra é liberada.
+
+A ativação atual pede e-mail e UUID completo do pedido do upsell. Consulta `GET https://api.cakto.com.br/public_api/orders/{id}/`, exige status paid, produto correto, e-mail correspondente e ausência de reembolso/chargeback/cancelamento. Sessão com jose, cookie HttpOnly, Secure em produção, SameSite=Lax, validade de sete dias. Cada abertura da missão consulta novamente a Cakto; falha do provedor bloqueia o conteúdo, não libera acesso. Nenhuma credencial da API nem dado pessoal do pedido retorna ao cliente.
+
+Não há webhook nem associação automática pós-compra nesta versão. Não anuncie ativação automática antes de implementar esse vínculo e validar uma compra real. O botão no app abre `/upsell?origem=clube`, modo de checkout direto. Configure o checkout e os botões no repositório da LP. Um pedido pendente nunca é aceito como comprovante. Valide Pix e cartão, reembolso, produto errado e reativação em outro aparelho antes de ativar vendas do pacote.
+
+Documentação consultada: https://docs.cakto.com.br/api-reference/orders/retrieve e https://docs.cakto.com.br/authentication .

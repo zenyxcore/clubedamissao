@@ -1,0 +1,447 @@
+{
+  "codigo-espacial": {
+    "id": "codigo-espacial",
+    "title": "O Código da Estação Espacial",
+    "intro": "Uma transmissão se perdeu entre as estrelas. Reative os sistemas da estação antes da próxima partida.",
+    "steps": [
+      {
+        "title": "O chamado da estação",
+        "token": "SINAL",
+        "task": "Na carta da estação, qual veículo levará a equipe ao espaço?",
+        "options": [
+          "Um foguete",
+          "Um submarino",
+          "Um trem"
+        ],
+        "answer": "Um foguete",
+        "hint": "O veículo sobe até as estrelas.",
+        "print": "CONVOCAÇÃO ESPACIAL\nO foguete do Clube aguarda a equipe. A estação precisa de ajuda para recuperar sua transmissão.",
+        "location": "Entregue o cartão 1 à equipe.",
+        "next": "Procurem o cartão 2 no sofá."
+      },
+      {
+        "title": "O painel de estrelas",
+        "token": "ORBITA",
+        "task": "Qual número continua a contagem 2, 4, 6, ...?",
+        "options": [
+          "7",
+          "8",
+          "10"
+        ],
+        "answer": "8",
+        "hint": "A contagem aumenta de dois em dois.",
+        "print": "PAINEL ESTELAR\n2 → 4 → 6 → ?\nPrimeiro dígito da transmissão: 3.",
+        "location": "No assento do sofá, sem mover móveis.",
+        "next": "O cartão 3 está dentro do livro separado pelo responsável."
+      },
+      {
+        "title": "A rota dos planetas",
+        "token": "COMETA",
+        "task": "O foguete deve seguir a seta para a direita. Qual direção é essa no mapa?",
+        "options": [
+          "Leste",
+          "Oeste",
+          "Sul"
+        ],
+        "answer": "Leste",
+        "hint": "No mapa desta missão, Norte fica para cima.",
+        "print": "MAPA DE VOO\nNORTE: acima · SUL: abaixo\nLESTE: direita · OESTE: esquerda\nSegundo dígito: 6.",
+        "location": "Dentro de um livro separado pelo responsável, ao alcance.",
+        "next": "O cartão 4 espera sobre a mesa de refeições."
+      },
+      {
+        "title": "Preparar a decolagem",
+        "token": "LUA",
+        "task": "Qual é a ordem da viagem?",
+        "options": [
+          "Embarcar → decolar → pousar",
+          "Pousar → embarcar → decolar",
+          "Decolar → pousar → embarcar"
+        ],
+        "answer": "Embarcar → decolar → pousar",
+        "hint": "Entramos no foguete antes de ele sair.",
+        "print": "PLANO DA VIAGEM\nPOUSAR · EMBARCAR · DECOLAR\nOrganize as três ações. Terceiro dígito: 9.",
+        "location": "Sobre a mesa de refeições, longe de calor.",
+        "next": "Procurem o cartão 5 atrás da almofada escolhida."
+      },
+      {
+        "title": "A mensagem da base",
+        "token": "ASTRO",
+        "task": "Decifre 2 - 1 - 19 - 5. Que palavra aparece?",
+        "options": [],
+        "answer": "BASE",
+        "hint": "2=B, 1=A, 19=S e 5=E.",
+        "print": "MENSAGEM DA ESTAÇÃO\n1=A · 2=B · 5=E · 19=S\nDecifre: 2 - 1 - 19 - 5. A caixa é nossa base de comunicação.",
+        "location": "Atrás de uma almofada acessível.",
+        "next": "O responsável indicará uma caixa: procurem o cartão 6 junto dela."
+      },
+      {
+        "title": "Transmissão recuperada",
+        "token": "ESTRELA",
+        "task": "Digite os três dígitos na ordem em que apareceram.",
+        "options": [],
+        "answer": "369",
+        "hint": "Painel: 3. Rota: 6. Decolagem: 9.",
+        "print": "CENTRAL DE COMUNICAÇÃO\nReúna os três dígitos para recuperar a transmissão. Abra a caixa com o responsável.",
+        "location": "Junto de uma caixa no chão, em um lugar seguro.",
+        "next": "Abram a surpresa juntos e celebrem a missão!"
+      }
+    ]
+  },
+  "floresta-antiga": {
+    "id": "floresta-antiga",
+    "title": "O Segredo da Floresta Antiga",
+    "intro": "O portal da floresta perdeu sua canção. Reúna os sinais da natureza para abri-lo outra vez.",
+    "steps": [
+      {
+        "title": "O convite do guardião",
+        "token": "RAIZ",
+        "task": "Qual elemento aparece no símbolo da floresta?",
+        "options": [
+          "Uma folha",
+          "Uma âncora",
+          "Um foguete"
+        ],
+        "answer": "Uma folha",
+        "hint": "É uma parte das plantas.",
+        "print": "CONVITE DO GUARDIÃO\nUma FOLHA marca o caminho. O portal só abre quando a equipe reúne os sinais da natureza.",
+        "location": "Entregue o cartão 1 à equipe.",
+        "next": "Procurem o cartão 2 no sofá."
+      },
+      {
+        "title": "O ritmo das folhas",
+        "token": "MUSGO",
+        "task": "Qual palavra completa FOLHA, FLOR, FOLHA, FLOR, ...?",
+        "options": [
+          "FOLHA",
+          "FLOR",
+          "PEDRA"
+        ],
+        "answer": "FOLHA",
+        "hint": "Dois elementos se alternam.",
+        "print": "RITMO DA FLORESTA\nFOLHA → FLOR → FOLHA → FLOR → ?\nPrimeiro número do portal: 5.",
+        "location": "No assento do sofá, sem mover móveis.",
+        "next": "O cartão 3 está dentro do livro separado pelo responsável."
+      },
+      {
+        "title": "A trilha do rio",
+        "token": "RIO",
+        "task": "Qual item uma planta precisa para crescer?",
+        "options": [
+          "Água",
+          "Plástico",
+          "Fumaça"
+        ],
+        "answer": "Água",
+        "hint": "As raízes absorvem esse recurso do solo.",
+        "print": "O RECADO DAS RAÍZES\nAs plantas usam água e luz para crescer. O rio leva água pela floresta.\nSegundo número: 1.",
+        "location": "Dentro de um livro separado pelo responsável, ao alcance.",
+        "next": "O cartão 4 espera sobre a mesa de refeições."
+      },
+      {
+        "title": "A árvore do tempo",
+        "token": "SEMENTE",
+        "task": "Qual sequência mostra o crescimento de uma planta?",
+        "options": [
+          "Semente → broto → árvore",
+          "Árvore → semente → broto",
+          "Broto → árvore → semente"
+        ],
+        "answer": "Semente → broto → árvore",
+        "hint": "A semente vem antes da pequena planta.",
+        "print": "CICLO DA FLORESTA\nBROTO · ÁRVORE · SEMENTE\nOrganize a sequência do crescimento. Terceiro número: 8.",
+        "location": "Sobre a mesa de refeições, longe de calor.",
+        "next": "Procurem o cartão 5 atrás da almofada escolhida."
+      },
+      {
+        "title": "A senha do portal",
+        "token": "FOLHA",
+        "task": "Complete a palavra: P _ R T A. Que palavra é?",
+        "options": [],
+        "answer": "PORTA",
+        "hint": "É por onde entramos em um lugar.",
+        "print": "ENTRADA SECRETA\nP _ R T A\nComplete a palavra. Para esta aventura, a caixa representa a porta do portal.",
+        "location": "Atrás de uma almofada acessível.",
+        "next": "O responsável indicará uma caixa: procurem o cartão 6 junto dela."
+      },
+      {
+        "title": "O portal desperta",
+        "token": "BOSQUE",
+        "task": "Qual é a combinação do portal?",
+        "options": [],
+        "answer": "518",
+        "hint": "Ritmo: 5. Rio: 1. Árvore: 8.",
+        "print": "O PORTAL DA FLORESTA\nReúna os três números na ordem da descoberta. Abra a surpresa com o responsável.",
+        "location": "Junto de uma caixa no chão, em um lugar seguro.",
+        "next": "Abram a surpresa juntos e celebrem a missão!"
+      }
+    ]
+  },
+  "misterio-museu": {
+    "id": "misterio-museu",
+    "title": "Mistério no Museu",
+    "intro": "Uma peça saiu de sua vitrine. Sigam as anotações do curador para descobrir onde ela foi guardada.",
+    "steps": [
+      {
+        "title": "O bilhete do curador",
+        "token": "LUPA",
+        "task": "Qual objeto ajuda a observar pequenos detalhes?",
+        "options": [
+          "Uma lupa",
+          "Uma bola",
+          "Um garfo"
+        ],
+        "answer": "Uma lupa",
+        "hint": "Ele faz os detalhes parecerem maiores.",
+        "print": "BILHETE DO CURADOR\nNossa LUPA é o símbolo da investigação. Uma peça saiu de sua vitrine: vamos seguir as anotações.",
+        "location": "Entregue o cartão 1 à equipe.",
+        "next": "Procurem o cartão 2 no sofá."
+      },
+      {
+        "title": "A coleção organizada",
+        "token": "FOSSIL",
+        "task": "A coleção tem 3 pedras claras e 2 escuras. Quantas pedras há ao todo?",
+        "options": [
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "5",
+        "hint": "Some três mais dois.",
+        "print": "REGISTRO DA COLEÇÃO\n3 pedras claras + 2 pedras escuras = ?\nPrimeiro número do arquivo: 2.",
+        "location": "No assento do sofá, sem mover móveis.",
+        "next": "O cartão 3 está dentro do livro separado pelo responsável."
+      },
+      {
+        "title": "A vitrine diferente",
+        "token": "ARTE",
+        "task": "Qual objeto é diferente dos outros dois?",
+        "options": [
+          "Pincel",
+          "Quadro",
+          "Banana"
+        ],
+        "answer": "Banana",
+        "hint": "Dois objetos estão ligados à pintura.",
+        "print": "OLHE COM ATENÇÃO\nPINCEL · QUADRO · BANANA\nQual não pertence ao grupo da pintura? Segundo número: 8.",
+        "location": "Dentro de um livro separado pelo responsável, ao alcance.",
+        "next": "O cartão 4 espera sobre a mesa de refeições."
+      },
+      {
+        "title": "A ordem do arquivo",
+        "token": "PEDRA",
+        "task": "Qual número vem depois de 10, 20, 30?",
+        "options": [
+          "35",
+          "40",
+          "50"
+        ],
+        "answer": "40",
+        "hint": "Acrescente dez a cada passo.",
+        "print": "ARQUIVO NUMERADO\n10 → 20 → 30 → ?\nTerceiro número do arquivo: 4.",
+        "location": "Sobre a mesa de refeições, longe de calor.",
+        "next": "Procurem o cartão 5 atrás da almofada escolhida."
+      },
+      {
+        "title": "O destino da peça",
+        "token": "MAPA",
+        "task": "Decifre 19 - 1 - 12 - 1. Que palavra aparece?",
+        "options": [],
+        "answer": "SALA",
+        "hint": "19=S, 1=A e 12=L.",
+        "print": "CÓDIGO DO CURADOR\n1=A · 12=L · 19=S\nMensagem: 19 - 1 - 12 - 1. A caixa representa a sala de conservação.",
+        "location": "Atrás de uma almofada acessível.",
+        "next": "O responsável indicará uma caixa: procurem o cartão 6 junto dela."
+      },
+      {
+        "title": "O mistério resolvido",
+        "token": "MUSEU",
+        "task": "Digite a combinação para consultar o arquivo final.",
+        "options": [],
+        "answer": "284",
+        "hint": "Coleção: 2. Vitrine: 8. Arquivo: 4.",
+        "print": "ARQUIVO DO MUSEU\nA peça estava em conservação, protegida pelo curador. Reúna os números e abra a caixa com o responsável.",
+        "location": "Junto de uma caixa no chão, em um lugar seguro.",
+        "next": "Abram a surpresa juntos e celebrem a missão!"
+      }
+    ]
+  },
+  "resgate-animal": {
+    "id": "resgate-animal",
+    "title": "O Resgate dos Animais",
+    "intro": "A raposa e a coruja precisam encontrar o caminho até o abrigo. Uma equipe atenta pode ajudar.",
+    "steps": [
+      {
+        "title": "Um pedido de ajuda",
+        "token": "PATA",
+        "task": "Quais animais precisam da equipe?",
+        "options": [
+          "Raposa e coruja",
+          "Peixe e baleia",
+          "Cavalo e porco"
+        ],
+        "answer": "Raposa e coruja",
+        "hint": "Um tem cauda felpuda; o outro tem asas.",
+        "print": "PEDIDO DE RESGATE\nA RAPOSA e a CORUJA precisam encontrar um abrigo. Vamos ajudar com calma e cuidado.",
+        "location": "Entregue o cartão 1 à equipe.",
+        "next": "Procurem o cartão 2 no sofá."
+      },
+      {
+        "title": "Os rastros da trilha",
+        "token": "TRILHA",
+        "task": "A trilha tem 4 pegadas e depois mais 3. Quantas são?",
+        "options": [
+          "6",
+          "7",
+          "8"
+        ],
+        "answer": "7",
+        "hint": "Conte quatro e acrescente três.",
+        "print": "RASTROS NA TRILHA\n4 pegadas + 3 pegadas = ?\nPrimeiro número do abrigo: 6.",
+        "location": "No assento do sofá, sem mover móveis.",
+        "next": "O cartão 3 está dentro do livro separado pelo responsável."
+      },
+      {
+        "title": "O recado da coruja",
+        "token": "ASA",
+        "task": "Qual animal da equipe tem penas?",
+        "options": [
+          "Coruja",
+          "Raposa",
+          "Os dois"
+        ],
+        "answer": "Coruja",
+        "hint": "As penas cobrem as asas.",
+        "print": "OBSERVE OS ANIMAIS\nRAPOSA: pelos e quatro patas.\nCORUJA: penas e duas asas. Segundo número: 3.",
+        "location": "Dentro de um livro separado pelo responsável, ao alcance.",
+        "next": "O cartão 4 espera sobre a mesa de refeições."
+      },
+      {
+        "title": "Um lugar protegido",
+        "token": "NINHO",
+        "task": "Qual é a melhor atitude ao encontrar um animal silvestre ferido?",
+        "options": [
+          "Chamar um adulto e manter distância",
+          "Pegar no colo sozinho",
+          "Oferecer qualquer comida"
+        ],
+        "answer": "Chamar um adulto e manter distância",
+        "hint": "A equipe ajuda sem tocar ou assustar o animal.",
+        "print": "CUIDAR TAMBÉM É PROTEGER\nAo ver um animal silvestre ferido, mantenha distância e avise um adulto.\nTerceiro número: 5.",
+        "location": "Sobre a mesa de refeições, longe de calor.",
+        "next": "Procurem o cartão 5 atrás da almofada escolhida."
+      },
+      {
+        "title": "A palavra do abrigo",
+        "token": "RAPOSA",
+        "task": "Complete: N I N _ O. Que palavra aparece?",
+        "options": [],
+        "answer": "NINHO",
+        "hint": "É um abrigo usado por muitas aves.",
+        "print": "MENSAGEM DA CORUJA\nN I N _ O\nComplete a palavra. Nesta aventura, a caixa representa um abrigo seguro.",
+        "location": "Atrás de uma almofada acessível.",
+        "next": "O responsável indicará uma caixa: procurem o cartão 6 junto dela."
+      },
+      {
+        "title": "Todos em segurança",
+        "token": "ABRIGO",
+        "task": "Digite a combinação do abrigo.",
+        "options": [],
+        "answer": "635",
+        "hint": "Trilha: 6. Coruja: 3. Proteção: 5.",
+        "print": "ABRIGO DO CLUBE\nReúna os números e abra a surpresa com o responsável. A raposa e a coruja chegaram em segurança!",
+        "location": "Junto de uma caixa no chão, em um lugar seguro.",
+        "next": "Abram a surpresa juntos e celebrem a missão!"
+      }
+    ]
+  },
+  "enigma-farol": {
+    "id": "enigma-farol",
+    "title": "O Enigma do Farol",
+    "intro": "A luz do farol parou de piscar. Reúnam as mensagens da costa e devolvam o sinal aos navegantes.",
+    "steps": [
+      {
+        "title": "A carta do faroleiro",
+        "token": "LUZ",
+        "task": "Para que serve a luz de um farol?",
+        "options": [
+          "Orientar embarcações",
+          "Regar plantas",
+          "Aquecer alimentos"
+        ],
+        "answer": "Orientar embarcações",
+        "hint": "Quem navega pode enxergar o sinal da costa.",
+        "print": "CARTA DO FAROLEIRO\nO farol ajuda as embarcações a reconhecer a costa. Precisamos recuperar seu sinal de luz.",
+        "location": "Entregue o cartão 1 à equipe.",
+        "next": "Procurem o cartão 2 no sofá."
+      },
+      {
+        "title": "O sinal que pisca",
+        "token": "ONDA",
+        "task": "Complete: LUZ, PAUSA, LUZ, PAUSA, ...",
+        "options": [
+          "LUZ",
+          "PAUSA",
+          "SOM"
+        ],
+        "answer": "LUZ",
+        "hint": "O sinal alterna luz e pausa.",
+        "print": "SINAL DO FAROL\nLUZ → PAUSA → LUZ → PAUSA → ?\nPrimeiro número do painel: 7.",
+        "location": "No assento do sofá, sem mover móveis.",
+        "next": "O cartão 3 está dentro do livro separado pelo responsável."
+      },
+      {
+        "title": "A bússola da costa",
+        "token": "NORTE",
+        "task": "No mapa, Norte está para cima. Qual direção fica embaixo?",
+        "options": [
+          "Sul",
+          "Leste",
+          "Oeste"
+        ],
+        "answer": "Sul",
+        "hint": "É a direção oposta ao Norte.",
+        "print": "MAPA DA COSTA\nNORTE: acima · SUL: abaixo\nLESTE: direita · OESTE: esquerda\nSegundo número: 4.",
+        "location": "Dentro de um livro separado pelo responsável, ao alcance.",
+        "next": "O cartão 4 espera sobre a mesa de refeições."
+      },
+      {
+        "title": "As conchas do caminho",
+        "token": "CONCHA",
+        "task": "Há 6 conchas no desenho. Duas foram guardadas. Quantas restam?",
+        "options": [
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": "4",
+        "hint": "Conte seis e retire duas.",
+        "print": "CONCHAS DA PRAIA\n6 conchas - 2 conchas = ?\nTerceiro número do painel: 2.",
+        "location": "Sobre a mesa de refeições, longe de calor.",
+        "next": "Procurem o cartão 5 atrás da almofada escolhida."
+      },
+      {
+        "title": "A mensagem do mar",
+        "token": "MAR",
+        "task": "Decifre 12 - 21 - 26. Que palavra aparece?",
+        "options": [],
+        "answer": "LUZ",
+        "hint": "12=L, 21=U e 26=Z.",
+        "print": "ALFABETO DO FAROLEIRO\n12=L · 21=U · 26=Z\nMensagem: 12 - 21 - 26. A caixa representa o painel do farol.",
+        "location": "Atrás de uma almofada acessível.",
+        "next": "O responsável indicará uma caixa: procurem o cartão 6 junto dela."
+      },
+      {
+        "title": "O farol acende",
+        "token": "FAROL",
+        "task": "Qual é a combinação para recuperar o sinal?",
+        "options": [],
+        "answer": "742",
+        "hint": "Sinal: 7. Costa: 4. Conchas: 2.",
+        "print": "PAINEL DO FAROL\nReúna os três números. Abra a surpresa com o responsável e celebrem: o sinal voltou!",
+        "location": "Junto de uma caixa no chão, em um lugar seguro.",
+        "next": "Abram a surpresa juntos e celebrem a missão!"
+      }
+    ]
+  }
+}
