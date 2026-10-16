@@ -107,3 +107,5 @@
  .profiles-modal .full-width{font-size:12px}.profile-cancel{font-size:12px;min-height:40px}
 }
 @media(max-width:360px){.modal.profiles-modal{padding:27px 15px 22px}.character-options{gap:6px}.profile-identity{gap:11px}.profile-identity>.profile-avatar{width:55px;height:55px}.profile-tabs{gap:5px}.profile-tab{padding:7px 5px;font-size:9px}}
+
+.print-pack{margin:28px 0}.print-files{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:22px 0}.print-files a{display:flex;align-items:center;gap:14px;padding:18px;background:#f8efd9;color:#113d35;border:1px solid #bc9450;border-radius:12px;text-decoration:none}.print-files a:hover{background:#eeddb8}.print-files a:focus-visible{outline:3px solid #c79945;outline-offset:3px}.print-files a span{flex:1}.print-files strong,.print-files small{display:block}.print-files small{font-size:12px;line-height:1.5;margin-top:5px}

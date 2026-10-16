@@ -40,3 +40,11 @@ O mapa é narrativo; os esconderijos físicos são os do guia. Aventuras futuras
 ## Prévia
 
 ![Interface do Clube da Missão](docs/clube-da-missao-preview.jpg)
+
+## Kit de impressão
+
+A preparação e a biblioteca oferecem PDFs A4 finais em `public/materiais`: seis pistas em três folhas, versão econômica, guia de três páginas, carta-convite e diário de quatro páginas. A carta é opcional; o cartão 1 começa o jogo. O certificado continua personalizado pelo navegador. Os cartões e o guia também são abertos pelos botões anteriores.
+
+Para regenerar os PDFs: `python scripts/build-materials.py` (ReportLab e pypdf instalados; dependências npm instaladas). O script importa STEPS diretamente do jogo; não duplique os desafios em outro arquivo. A carta-convite original fica em `public/materiais/carta-convite.jpg`.
+
+O aplicativo ainda usa persistência local e não possui autenticação ou liberação de acesso vinculada à compra. Os PDFs publicados são acessíveis por URL; não representam controle de acesso ao order bump.
