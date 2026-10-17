@@ -116,3 +116,16 @@ c.save()
 # A carta visual original é um convite; os cartões contêm os códigos do jogo.
 c=canvas.Canvas(str(OUT/'carta-convite.pdf'),pagesize=A4)
 c.drawImage(str(ROOT/'public/materiais/carta-convite.jpg'),0,0,W,H,preserveAspectRatio=True,anchor='c',mask='auto');c.save()
+
+# Kit único, com imagens otimizadas para download no celular.
+from pypdf import PdfReader, PdfWriter
+kit = PdfWriter()
+for name in ['guia-do-responsavel.pdf', 'pistas-da-missao.pdf', 'carta-convite.pdf', 'diario-do-explorador.pdf']:
+ kit.append(OUT/name)
+for page in kit.pages:
+ for image in page.images:
+  bitmap = image.image.copy()
+  bitmap.thumbnail((1240, 1754))
+  image.replace(bitmap.convert('RGB'), quality=72)
+ page.compress_content_streams()
+kit.write(OUT/'kit-da-missao.pdf')

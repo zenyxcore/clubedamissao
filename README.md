@@ -62,3 +62,14 @@ A ativação atual pede e-mail e UUID completo do pedido do upsell. Consulta `GE
 Não há webhook nem associação automática pós-compra nesta versão. Não anuncie ativação automática antes de implementar esse vínculo e validar uma compra real. O botão no app abre `/upsell?origem=clube`, modo de checkout direto. Configure o checkout e os botões no repositório da LP. Um pedido pendente nunca é aceito como comprovante. Valide Pix e cartão, reembolso, produto errado e reativação em outro aparelho antes de ativar vendas do pacote.
 
 Documentação consultada: https://docs.cakto.com.br/api-reference/orders/retrieve e https://docs.cakto.com.br/authentication .
+
+## Experiência do Clube e instalação
+
+- O manifesto em `/manifest.webmanifest` fornece instalação com ícones próprios, modo independente e área segura do celular. O convite aparece após 12 segundos na tela inicial; dispensá-lo adia nova sugestão por sete dias. Meu Clube mantém instruções acessíveis. A instalação depende do navegador e precisa ser confirmada pelo usuário.
+- `/sw.js` mantém somente o aviso offline e os PDFs públicos da missão principal em cache. Ele nunca armazena respostas de APIs, sessões de compra ou histórias pagas. O jogo completo não é anunciado como offline.
+- Equipe, progresso e preparação ficam no armazenamento deste navegador. Meu Clube permite exportar e restaurar um backup JSON validado, sem tokens de compra. A restauração exige confirmação; a temporada precisa ser ativada no outro aparelho.
+- O passaporte preserva um carimbo por missão/equipe ao reiniciar a trilha. Em missões extras antigas já concluídas, abrir novamente a missão migra o carimbo (data de registro da migração, pois o formato antigo não guardava data).
+- Sincronização automática entre dispositivos ainda não existe: exige autenticação do comprador e banco persistente. Não substitua isso por variáveis de memória de uma função Vercel.
+- O kit único contém os 11 PDFs/páginas de guia, pistas coloridas, carta e diário. `scripts/build-materials.py` o recompõe usando pypdf. A versão econômica permanece separada.
+
+Validação manual: criar apelido → preparar equipe → abrir kit → marcar checklist → jogar → pausar → continuar → concluir → conferir carimbo → reiniciar preservando carimbo → exportar backup → confirmar restauração. Testar instalação em Android/Chrome e iOS/Safari reais; o navegador automatizado não substitui essa confirmação nativa.
